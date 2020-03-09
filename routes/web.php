@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::resource('kategori', 'KategoriController');
 Route::resource('tiket', 'TiketController');
 Route::get('transaksi', 'TransaksiController@index')->name('transaksi.index');
+Route::post('transaksi', 'TransaksiController@store')->name('transaksi.store');
+Route::delete('transaksi/{id}', 'TransaksiController@destroy')->name('transaksi.destroy');
+Route::get('transaksi/update', 'TransaksiController@update')->name('transaksi.update');

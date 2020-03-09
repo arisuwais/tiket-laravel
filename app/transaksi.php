@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class transaksi extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['id_tiket', 'qty', 'status'];
 
     public function tiket()
     {

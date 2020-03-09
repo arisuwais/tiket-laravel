@@ -37,7 +37,12 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'qty' => 'required'
+
+        ]);
+        transaksi::create($request->except('submit'));
+        return redirect()->route('transaksi.index');
     }
 
     /**
@@ -69,9 +74,11 @@ class TransaksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        $transaksi = transaksi::where('status', '0');
+        $transaksi->update(['status' => '1']);
+        return redirect()->back();
     }
 
     /**
@@ -82,6 +89,11 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transaksi = transaksi::findOrFail($id);
+        if (!$transaksi) {
+            return redirect()->back();
+        }
+        $transaksi->delete();
+        return redirect()->route('transaksi.index')->with('pesan', 'data transaksi berhasil dihapus');
     }
 }
