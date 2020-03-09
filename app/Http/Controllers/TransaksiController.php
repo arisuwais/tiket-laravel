@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\transaksi;
+use Fpdf;
 
 class TransaksiController extends Controller
 {
@@ -95,5 +96,14 @@ class TransaksiController extends Controller
         }
         $transaksi->delete();
         return redirect()->route('transaksi.index')->with('pesan', 'data transaksi berhasil dihapus');
+    }
+    public function laporan()
+    {
+        $fpdf = new Fpdf();
+        $fpdf::AddPage();
+        $fpdf::SetFont('Courier', 'B', 18);
+        $fpdf::Cell(50, 25, 'Hello World!');
+        $fpdf::Output();
+        exit();
     }
 }

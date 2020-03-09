@@ -57,12 +57,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('kategori.index')}}">Kategori</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('tiket.index')}}">Data Tiket</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('transaksi.index')}}">Transaksi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('transaksi.laporan')}}">Laporan</a>
                         </li>
 
                         <li class="nav-item dropdown">
