@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\transaksi;
 
 class HomeController extends Controller
 {
@@ -21,8 +23,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
     public function index()
     {
-        return view('home');
+        $transaksi =  DB::table('transaksis')
+            ->join('tikets', 'transaksis.id_tiket', '=',  'tikets.id')
+            ->join('kategoris', 'kategoris.id', '=', 'tikets.id_kategori')
+            ->where('status', '=', 1)
+            ->get();
+
+        // $count = transaksi::all();
+        return view('home', compact('transaksi'));
     }
 }

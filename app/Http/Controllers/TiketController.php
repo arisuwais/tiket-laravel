@@ -14,7 +14,8 @@ class TiketController extends Controller
      */
     public function index()
     {
-        $tiket = tiket::all();
+        $tiket = tiket::orderby('id', 'desc')->get();
+
         return view('tiket.index', compact('tiket'));
     }
 
