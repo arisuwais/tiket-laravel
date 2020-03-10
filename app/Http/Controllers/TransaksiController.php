@@ -137,8 +137,9 @@ class TransaksiController extends Controller
         foreach ($transaksi as $item) {
             $pdf::Cell(60, 7, $item->tiket->name_tiket, 1, 0);
             $pdf::Cell(25, 7, $item->qty, 1, 0);
-            $pdf::Cell(40, 7, $item->tiket->harga_tiket, 1, 0);
-            $pdf::Cell(38, 7, $item->tiket->harga_tiket * $item->qty, 1, 0);
+            $harga = str_replace('.', '', $item->tiket->harga_tiket);
+            $pdf::Cell(40, 7, "Rp." . number_format($harga) . ",-", 1, 0);
+            $pdf::Cell(38, 7, "Rp." . number_format($harga * $item->qty) . ",-", 1, 0);
             $pdf::Cell(30, 7, \Carbon\Carbon::parse($item->created_at)->formatLocalized('%d %b %Y'), 1, 1);
         }
 

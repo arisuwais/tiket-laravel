@@ -10,6 +10,7 @@
                 <div class="card-body">
 
                     <a href="{{route('kategori.create')}}" class="btn btn-primary btn-sm">Tambah Kategori</a>
+                    <a href="{{route('kategori.excel')}}" class="btn btn-primary btn-sm">Import Excel</a>
                     @include('notifikasi')
                     <table class="table table-bordered" id="users-table">
                         <thead>
