@@ -167,6 +167,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Codedge\Fpdf\FpdfServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,6 +230,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Fpdf' => Codedge\Fpdf\Facades\Fpdf::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

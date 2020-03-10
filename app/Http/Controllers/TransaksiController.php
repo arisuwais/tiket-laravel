@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\transaksi;
 use App\tiket;
 use Fpdf;
+use App\Exports\TransaksiExport;
+// use App\Exports\TransaksiExport as ExportsTransaksiExport;
 
 class TransaksiController extends Controller
 {
@@ -142,5 +144,10 @@ class TransaksiController extends Controller
 
         $pdf::Output();
         exit;
+    }
+
+    public function excel()
+    {
+        return (new TransaksiExport)->download('penjualan_tiket.xlsx');
     }
 }
