@@ -58,21 +58,21 @@
                         <td>{{ $item->tiket->name_tiket }}</td>
                         <td>{{ $item->qty }}</td>
                         <td>{{ $item->tiket->harga_tiket }}</td>
-                        <td>{{ $item->tiket->harga_tiket*$item->qty }}</td>
-
+                        @php($harga = str_replace('.','',$item->tiket->harga_tiket ))
+                        <td>{{"Rp.".number_format($harga*$item->qty).",-" }}</td>
                         {!! Form::open(['route' => ['transaksi.destroy', $item->id],'method'=>'DELETE']) !!}
                         <td><button type="submit" class="btn btn-danger">Cancel</button></td>
                         {!! Form::close() !!}
 
                     </tr>
                     <?php $no++ ?>
-                    <?php $total = $total + ($item->tiket->harga_tiket * $item->qty) ?>
+                    <?php $total = $total + ($harga * $item->qty) ?>
                     @endforeach
                     <tr>
                         <td colspan="5">
                             <p align="right">Total</p>
                         </td>
-                        <td>{{$total}}</td>
+                        <td>{{"Rp.".number_format($total).",-" }}</td>
                     </tr>
                 </table>
             </div>

@@ -41,7 +41,7 @@
 
                         <label class="col-md-2 col-form-label text-md-right"><i class="far fa-flag"> Jumlah </i></label>
                         <div class="col-md-6">
-                            {!! Form::number('jumlah_tiket',null,['class'=>'form-control']) !!}
+                            {!! Form::text('jumlah_tiket',null,['class'=>'form-control uang']) !!}
                         </div>
                     </div>
 
