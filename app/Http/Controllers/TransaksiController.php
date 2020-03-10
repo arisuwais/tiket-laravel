@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\transaksi;
+use App\tiket;
 use Fpdf;
 
 class TransaksiController extends Controller
@@ -95,8 +96,19 @@ class TransaksiController extends Controller
             return redirect()->back();
         }
         $transaksi->delete();
+
+        if ($transaksi['id_tiket'] != 0) {
+            $tikets = tiket::where('id', '=', $transaksi['id_tiket'])->get();
+            $jmlh = $tikets[0]['jumlah_tiket'] + $transaksi['qty'];
+            $idx = $tikets[0]['id'];
+            $tiket = tiket::where('id', '=', $idx);
+            $tiket->update(['jumlah_tiket' => $jmlh]);
+        }
         return redirect()->route('transaksi.index')->with('pesan', 'data transaksi berhasil dihapus');
     }
+
+
+
     public function laporan()
     {
         $pdf = new Fpdf("L", "cm", "A4");
