@@ -22,10 +22,10 @@
                     <table class="table table-bordered" id="users-table">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama Kategori</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th><i class="far fa-sticky-note"> No </i></th>
+                                <th><i class="fas fa-cubes"> Nama Kategori </i></th>
+                                <th><i class="fas fa-edit"> Edit </i></th>
+                                <th><i class="fas fa-trash-alt"> Delete </i></th>
                             </tr>
                         </thead>
                         <tbody>

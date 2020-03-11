@@ -48,12 +48,12 @@
                         <th colspan="6">Detail Transaksi</th>
                     </tr>
                     <tr>
-                        <th>No</th>
-                        <th>Nama Tiket</th>
-                        <th>Qty</th>
-                        <th>Harga Tiket</th>
-                        <th>Subtotal</th>
-                        <th>Cancel</th>
+                        <th><i class="far fa-sticky-note"> No </i></th>
+                        <th><i class="fas fa-file-signature"> Nama Tiket </i></th>
+                        <th><i class="fas fa-star-of-david"> Qty </i></th>
+                        <th><i class="fas fa-puzzle-piece"> Harga Tiket </i></th>
+                        <th><i class="fab fa-cuttlefish"> Subtotal </i></th>
+                        <th><i class="fas fa-trash-alt"> Cancel </i></th>
                     </tr>
                     <?php $no = 1;
                     $total = 0; ?>
