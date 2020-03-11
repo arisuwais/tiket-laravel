@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><i class="fas fa-database"> Data Tiket </i></div>
+                <div class="card-header"><i class="fas fa-address-card"> Data Tiket </i></div>
                 <div class="card-body">
                     <a href="{{ route('tiket.create') }}" class="btn btn-danger btn-sm"><i class="fas fa-plus-square"> Tambah Tiket </i></a>
                     <hr>

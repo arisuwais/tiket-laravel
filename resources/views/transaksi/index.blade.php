@@ -1,13 +1,18 @@
 @extends('layouts.app')
 @section('content')
+<style type="text/css">
+    .card-header {
+        background-color: #27c8f9;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">TRANSAKSI TIKET</div>
+                <div class="card-header"><i class="fas fa-database"> TRANSAKSI TIKET </i></div>
                 <div class="card-body">
                     @include('validasi')
-                    <h3>Form Transaksi</h3>
+                    <h3><i class="fas fa"> Form Transaksi </i></h3>
                     <table class="table table-bordered">
                         {!! Form::open(['route' => 'transaksi.store','method'=>'POST']) !!}
                         <tr>
@@ -69,10 +74,12 @@
                     <?php $total = $total + ($harga * $item->qty) ?>
                     @endforeach
                     <tr>
-                        <td colspan="5">
-                            <p align="right">Total</p>
+                        <td colspan="4">
+                            <p><i class="fas fa"> Total </i></p>
                         </td>
                         <td>{{"Rp.".number_format($total).",-" }}</td>
+                        </td>
+                        <td></td>
                     </tr>
                 </table>
             </div>

@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Tiket</div>
+                <div class="card-header"><i class="fas fa-edit"> Tambah Tiket </i></div>
                 <div class="card-body">
                     @include('validasi')
                     {!! Form::open(['route'=>'tiket.store','method'=>'POST']) !!}

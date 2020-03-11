@@ -1,16 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+    .card-header {
+        background-color: #27c8f9;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Kategori</div>
+                <div class="card-header"><i class="fas fa-align-justify"> Kategori </i></div>
+
 
                 <div class="card-body">
 
-                    <a href="{{route('kategori.create')}}" class="btn btn-primary btn-sm">Tambah Kategori</a>
-                    <a href="{{route('kategori.excel')}}" class="btn btn-primary btn-sm">Import Excel</a>
+                    <a href="{{route('kategori.create')}}" class="btn btn-danger btn-sm"><i class="fas fa"> Tambah Kategori </i></a>
+                    <a href="{{route('kategori.excel')}}" class="btn btn-danger btn-sm"><i class="fas fa"> Import Excel </i></a>
+                    <hr>
                     @include('notifikasi')
                     <table class="table table-bordered" id="users-table">
                         <thead>

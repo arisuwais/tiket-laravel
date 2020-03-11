@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+    .card-header {
+        background-color: #27c8f9;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Katgori</div>
+                <div class="card-header"><i class="fas fa-edit"> Tambah Katgori </i></div>
                 <div class="card-body">
                     @include('validasi')
                     {!! Form::open(['route'=>'kategori.store', 'method'=>'POST']) !!}

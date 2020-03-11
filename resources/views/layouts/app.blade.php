@@ -33,7 +33,8 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    Sistem Penjualan Tiket
+                    <i class="fas fa-ticket-alt"> Sistem Penjualan Tiket </i>
+
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -59,18 +60,18 @@
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('kategori.index')}}">Kategori</a>
+                            <a class="nav-link" href="{{route('kategori.index')}}"><i class="fas fa-align-justify"> Kategori </i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('tiket.index')}}">Data Tiket <i class="fas da-address-card"></i></a>
+                            <a class="nav-link" href="{{route('tiket.index')}}"> <i class="fas fa-address-card"> Data Tiket </i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('transaksi.index')}}">Transaksi</a>
+                            <a class="nav-link" href="{{route('transaksi.index')}}"><i class="fas fa-database"> Transaksi </i></a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Export Laporan
+                                <i class="fas  fa-bezier-curve"> Export Laporan </i>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -86,7 +87,7 @@
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                <i class="fas fa-archive"> {{ Auth::user()->name }} </i> <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
