@@ -23,6 +23,7 @@
     <style type="text/css">
         .navbar-expand-md {
             background-color: #27c8f9;
+            font-size: 12px;
         }
     </style>
 
@@ -32,7 +33,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{route('home')}}">
                     <i class="fas fa-ticket-alt"> Sistem Penjualan Tiket </i>
 
                 </a>
@@ -95,10 +96,13 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
+
+                                <a class="dropdown-item" href="{{route('mail.email')}}">Send Mail</a>
+
+
                             </div>
                         </li>
                         @endguest
